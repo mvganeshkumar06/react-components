@@ -7,18 +7,33 @@
 }
 
 .btnContainer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
-.btn {
-  margin: 0px 10px;
+.btn,.selectedBtn {
+  margin: 10px;
   border: none;
   border-radius: 5px;
   padding: 10px;
   background-color: #90cdf4;
 }
 
+.selectedBtn{
+  background-color:#2b6cb0;
+  color:white;
+}
+
 .btn:hover {
   cursor: pointer;
+}
+
+
+@media (min-width:330px) and (max-width:800px){
+  .btnContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

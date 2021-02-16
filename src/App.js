@@ -9,18 +9,22 @@ import DesignerTool from "./DesignerTool";
 import Cart from "./Cart";
 import Toast from "./Toast";
 import Todo from "./Todo";
+import DarkMode from "./DarkMode";
+import ListItems from "./ListItems";
 
 export default function App() {
   const components = {
-    Counter: <Counter />,
-    TweetPost: <TweetPost />,
-    PasswordChecker: <PasswordChecker />,
-    AlphaNumericPassword: <AlphaNumbericPassword />,
-    PasswordHide: <PasswordHide />,
-    DesinerTool: <DesignerTool />,
-    Cart: <Cart />,
-    Toast: <Toast />,
-    Todo: <Todo />
+    "Counter": <Counter />,
+    "TweetPost": <TweetPost />,
+    "PasswordChecker": <PasswordChecker />,
+    "AlphaNumericPassword": <AlphaNumbericPassword />,
+    "PasswordHide": <PasswordHide />,
+    "DesinerTool": <DesignerTool />,
+    "Cart": <Cart />,
+    "Toast": <Toast />,
+    "Todo": <Todo />,
+    "DarkMode":<DarkMode/>,
+    "ListItems":<ListItems/>
   };
 
   let initialStateObject = {};
@@ -29,9 +33,7 @@ export default function App() {
     initialStateObject[component] = false;
   });
 
-  const [isVisibleComponent, setIsVisibleComponent] = useState(
-    initialStateObject
-  );
+  const [isVisibleComponent, setIsVisibleComponent] = useState(initialStateObject);
 
   const showComponentHandler = (component) => {
     if (isVisibleComponent[component]) {
@@ -44,14 +46,15 @@ export default function App() {
 
   return (
     <div className={styles.appContainer}>
-      <h1>React practice components</h1>
+      <h1>React components</h1>
+      <h2>Select a component to interact with it</h2>
       <div className={styles.btnContainer}>
         {Object.keys(isVisibleComponent).map((component) => {
           return (
             <button
               key={component}
               onClick={() => showComponentHandler(component)}
-              className={styles.btn}
+              className={isVisibleComponent[component]?styles.selectedBtn:styles.btn}
             >
               Show {component}
             </button>

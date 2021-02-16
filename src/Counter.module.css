@@ -17,3 +17,9 @@
 .countValue {
   margin-top: 10px;
 }
+
+@media (min-width:330px) and (max-width:600px){
+  .counterContainer{
+    width:90vw;
+  }
+}

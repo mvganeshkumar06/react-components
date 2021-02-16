@@ -1,4 +1,4 @@
-.passwordCheckerContainer {
+.listItemsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,14 +10,27 @@
   border-radius: 5px;
 }
 
-.input {
-  margin: 10px 0px;
+.listItem, .likedItem{
+  width:200px;
+  display: flex;
+  margin:5px 0px;
+}
+
+.listItem{
+  justify-content: space-between;
+}
+
+.likedItem{
+  justify-content: center;
+  text-align: left;
 }
 
 .btn {
+  width:60px;
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  margin: 0px 5px;
+  padding: 5px 10px;
   background-color: #68d391;
 }
 
@@ -26,7 +39,7 @@
 }
 
 @media (min-width:330px) and (max-width:600px){
-  .passwordCheckerContainer{
+  .listItemsContainer{
     width:90vw;
   }
 }
