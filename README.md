@@ -1,2 +1,3 @@
-# react-practice-app
-Created with CodeSandbox
+# React Practice App
+
+A React app to practice building components.
