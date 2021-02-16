@@ -8,10 +8,9 @@ const PasswordHide = () => {
   return (
     <div className={styles.passwordHideContainer}>
       <input
-        type="text"
+        type={showPass?"text":"password"}
         placeholder="Enter your password"
         onChange={(event) => setPass(event.target.value)}
-        value={showPass ? pass : "*".repeat(pass.length)}
         className={styles.input}
       />
       <button onClick={() => setShowPass(!showPass)} className={styles.btn}>
